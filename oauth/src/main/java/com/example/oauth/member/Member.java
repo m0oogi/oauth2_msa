@@ -10,10 +10,9 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "member", schema = "study_db")
-@Getter(AccessLevel.PUBLIC)
-@Setter(AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@Setter
+@Table(name = "\"member\"", schema = "study_db")
 @SuppressWarnings("unused")
 public class Member {
 
@@ -24,7 +23,7 @@ public class Member {
     private String username;
     private String remark;
     
-    @Builder
+    public Member() {}
     public Member(String name, String username, String remark) {
         this.name = name;
         this.username = username;
