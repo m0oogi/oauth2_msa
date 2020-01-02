@@ -72,7 +72,7 @@ public class OauthApplicationTests {
                 .header("Authorization", "Bearer " + accessToken)
                 .accept(CONTENT_TYPE))
         		.andDo(print())
-                .andExpect(jsonPath("$.username", is("test1")));
+                .andExpect(jsonPath("$.username", is("jjangu")));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class OauthApplicationTests {
                 .header("Authorization", "Bearer " + accessToken)
                 .accept(CONTENT_TYPE))
         		.andDo(print())
-                .andExpect(jsonPath("$.username", is("test2")));
+                .andExpect(jsonPath("$.username", is("chulsu")));
     }
 
     @Test
@@ -101,7 +101,7 @@ public class OauthApplicationTests {
         mockMvc.perform(get("/members/1")
                 .header("Authorization", "Bearer " + accessToken)
                 .accept(CONTENT_TYPE))
-                .andExpect(jsonPath("$.username", is("test")));
+                .andExpect(jsonPath("$.username", is("jjanggu")));
     }
 
     private void createUser(JSONObject user, String accessToken) throws Exception {
