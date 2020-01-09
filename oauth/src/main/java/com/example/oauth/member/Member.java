@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 @Entity
 @Getter
-@Setter
 @Table(name = "\"member\"", schema = "study_db")
 @SuppressWarnings("unused")
 public class Member {

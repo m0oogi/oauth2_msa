@@ -12,34 +12,33 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-        format_sql: true        
-  
-    
-  
+        format_sql: true
+        
   datasource:
     url: jdbc:mysql://localhost:3306/study_db?autoReconnect=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: 1234
     
-#security 설정
+#security
 security:
   user:
     name: user
     password: test
   oauth2:
-    resource:
-      jwt:
-        key-uri: http://localhost:9093/oauth/token_key 
     client:
       client-id: foo
       client-secret: bar
     authorization:
       token-key-access: isAuthenticated()
+    resource:
+      jwt:
+        key-uri: http://localhost:9093/oauth/token_key
+      
 #로깅레벨
 logging:
   level:
-    ROOT: debug
+    ROOT: error
 #포트
-server: 
+server:
   port: 9093

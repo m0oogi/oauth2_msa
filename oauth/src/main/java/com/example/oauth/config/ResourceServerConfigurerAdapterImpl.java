@@ -6,15 +6,15 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 
-@EnableResourceServer // 자원서버 설정
+@EnableResourceServer
 @Configuration
 public class ResourceServerConfigurerAdapterImpl extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-    	http.headers().frameOptions().disable();
     	http.authorizeRequests()
 		.antMatchers("/members", "/members/**").access("#oauth2.hasScope('read')")
 		.anyRequest().authenticated();
     }
+    
 }
