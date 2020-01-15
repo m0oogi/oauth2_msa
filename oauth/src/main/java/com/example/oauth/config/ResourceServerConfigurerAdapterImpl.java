@@ -5,16 +5,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
-
-@EnableResourceServer
 @Configuration
+@EnableResourceServer
 public class ResourceServerConfigurerAdapterImpl extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
     	http.authorizeRequests()
-		.antMatchers("/members", "/members/**").access("#oauth2.hasScope('read')")
-		.anyRequest().authenticated();
+		.antMatchers("/members", "/members/**", "/dataPage")
+		.access("#oauth2.hasScope('read')");
+		//.anyRequest()
+		//.authenticated();
     }
     
 }

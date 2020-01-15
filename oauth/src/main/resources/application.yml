@@ -6,14 +6,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-      naming:
-        strategy: org.hibernate.cfg.ImprovedNamingStrategy
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
         format_sql: true
-        
   datasource:
     url: jdbc:mysql://localhost:3306/study_db?autoReconnect=true&useSSL=false
     driverClassName: com.mysql.jdbc.Driver
@@ -26,9 +22,6 @@ security:
     name: user
     password: test
   oauth2:
-    client:
-      client-id: foo
-      client-secret: bar
     authorization:
       token-key-access: isAuthenticated()
     resource:
