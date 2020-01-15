@@ -1,12 +1,15 @@
 module.exports = {
   modules: [
-      '@nuxtjs/axios'
+      '@nuxtjs/axios',
+      '@nuxtjs/proxy'
   ],
   axios: {
       proxy: true
   },
   proxy: {
-      '/prefix-url': 'proxy-url'
+    '/oauth/token':'http://localhost:9093/',
+    '/members':'http://localhost:9093/',
+    '/toDataPage':'http://localhost:9093/'
   },
   /*
   ** Headers of the page
@@ -42,7 +45,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['axios', 'querystring']
   }
 }
 

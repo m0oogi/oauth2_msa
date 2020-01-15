@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>User Join Page</h1>
-    <p>Hi from {{ name }}</p>
     <table>
       <tr>
         <td><span>ID: </span></td>
